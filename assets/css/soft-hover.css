@@ -1,0 +1,47 @@
+img.soft-hover-image,
+.hero-bg img,
+.collection-card img,
+.atelier-card img,
+.collection-item img,
+.card figure img {
+  transform-origin: center center;
+  will-change: transform, filter;
+  transition: transform 1.15s cubic-bezier(0.22, 0.61, 0.36, 1), filter 1.15s ease;
+  filter: brightness(0.88) saturate(0.92);
+}
+
+.soft-hover-image:hover,
+*:hover > .soft-hover-image,
+.hero:hover .hero-bg img,
+.collection-card:hover img,
+.atelier-card:hover img,
+.collection-item:hover img,
+.card:hover figure img {
+  transform: scale(1.045);
+  filter: brightness(0.96) saturate(0.98);
+}
+
+.soft-hover-frame {
+  background-size: cover;
+  background-position: center;
+  will-change: background-size, filter;
+  filter: brightness(0.88) saturate(0.92);
+  transition: background-size 1.15s cubic-bezier(0.22, 0.61, 0.36, 1), filter 1.15s ease;
+}
+
+.soft-hover-frame:hover {
+  background-size: 104.5%;
+  filter: brightness(0.96) saturate(0.98);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  img.soft-hover-image,
+  .hero-bg img,
+  .collection-card img,
+  .atelier-card img,
+  .collection-item img,
+  .card figure img,
+  .soft-hover-frame {
+    transition: none;
+  }
+}

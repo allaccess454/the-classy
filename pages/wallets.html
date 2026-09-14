@@ -8,510 +8,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/header.css">
-<style>
-  :root{
-    --bg:            #141414;
-    --bg-soft:       #191a1a;
-    --panel:         #1b1c1c;
-    --panel-2:       #1a1f1e;
-    --line:          #2a2a28;
-    --gold:          #f4cb58;
-    --gold-deep:     #c9a227;
-    --gold-btn:      #f4cb58;
-    --cream:         #f3f0e8;
-    --muted:         #8f8a7e;
-    --muted-2:       #b9b3a4;
-  }
-
-  *{ box-sizing:border-box; margin:0; padding:0; }
-
-  body{
-    background: var(--bg);
-    color: var(--cream);
-    font-family: 'Jost', sans-serif;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  .serif{ font-family:'Playfair Display', serif; }
-
-  a{ color:inherit; text-decoration:none; }
-
-  .wrap{
-    max-width: 1205px;
-    margin: 0 auto;
-    padding: 0 100px;
-  }
-
-  .label{
-    font-size: 12px;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    font-weight: 600;
-  }
-
-  /* ---------------- HERO ---------------- */
-  .hero{
-    padding: 88px 0 56px;
-  }
-  .hero-grid{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 56px;
-    align-items:center;
-  }
-  .hero h1{
-    font-size: 52px;
-    line-height: 1.08;
-    font-weight: 700;
-    color: var(--cream);
-  }
-  .hero h1 em{
-    display:block;
-    font-style: italic;
-    font-weight: 700;
-    color: var(--gold);
-    margin-top: 2px;
-  }
-  .hero p{
-    margin-top: 22px;
-    max-width: 420px;
-    font-size: 15px;
-    line-height: 1.75;
-    color: var(--muted-2);
-    letter-spacing: .01em;
-  }
-  .hero-actions{
-    display:flex;
-    gap: 14px;
-    margin-top: 34px;
-  }
-  .btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding: 15px 30px;
-    font-size: 12px;
-    letter-spacing: .16em;
-    text-transform: uppercase;
-    font-weight: 600;
-    cursor:pointer;
-    transition: transform .2s ease, opacity .2s ease;
-  }
-  .btn:hover{ opacity:.88; }
-  .btn-solid{
-    background: var(--gold-btn);
-    color: #17150c;
-  }
-  .btn-outline{
-    background: transparent;
-    color: var(--gold);
-    border: 1px solid var(--gold-deep);
-  }
-
-  .hero-figure{
-    position:relative;
-    aspect-ratio: 1 / 0.92;
-    border: 1px solid var(--gold-deep);
-    background-image: url('../assets/images/wallets_1.png');
-    background-size: cover;
-    background-position: center;
-    background:
-      radial-gradient(120% 90% at 50% 30%, #4a4034 0%, #241f18 42%, #0d0c0a 78%);
-    overflow:hidden;
-    transition: filter .7s ease;
-  }
-  .hero-figure{ background-image: url('../assets/images/wallets_1.png'); }
-  .hero-figure .wallet,
-  .hero-figure .hand{ display:none; }
-  .hero-figure .wallet{
-    position:absolute;
-    left:50%; top:44%;
-    width:56%;
-    aspect-ratio: 4/2.9;
-    transform: translate(-50%,-50%) rotate(-3deg);
-    background:
-      repeating-linear-gradient(115deg, #2b2620 0 2px, #262119 2px 4px),
-      linear-gradient(155deg,#3a332a,#1c1813);
-    border: 1px dashed rgba(230,200,140,.35);
-    box-shadow: 0 30px 60px rgba(0,0,0,.6);
-  }
-  .hero-figure .hand{
-    position:absolute;
-    left:50%; bottom:-6%;
-    width:46%;
-    height:34%;
-    transform: translateX(-50%);
-    background: radial-gradient(80% 100% at 50% 0%, #6b6a66 0%, #38372f 55%, transparent 100%);
-    border-radius: 50% 50% 40% 40%;
-    filter: saturate(.4);
-  }
-
-  /* ---------------- SUBNAV ---------------- */
-  .subnav{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding: 20px 0;
-    border-bottom: 1px solid var(--line);
-  }
-  .subnav-links{
-    display:flex;
-    gap: 34px;
-  }
-  .subnav-links a{
-    font-size: 12px;
-    letter-spacing: .15em;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: var(--muted-2);
-    padding-bottom: 8px;
-    border-bottom: 2px solid transparent;
-  }
-  .subnav-links a.active{
-    color: var(--gold);
-    border-color: var(--gold);
-  }
-  .sort{
-    display:flex;
-    align-items:center;
-    gap: 10px;
-    font-size: 11px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  .sort svg{ width:16px; height:16px; color:var(--gold); }
-
-  /* ---------------- PRODUCTS ---------------- */
-  .products{
-    padding: 40px 0 100px;
-    display:grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 24px;
-    align-items: stretch;
-  }
-  .row-three{
-    grid-column: 1 / -1;
-    display:grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 24px;
-    margin-top: 24px;
-  }
-
-  .card{
-    background: var(--panel);
-    display:flex;
-    flex-direction:column;
-  }
-  .card-photo{
-    aspect-ratio: 16/11;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    transition: filter .7s ease;
-  }
-
-  .card-photo:hover,
-  .hero-figure:hover,
-  .mat-figure:hover,
-  .identity-card:hover{
-    filter: brightness(1.04) saturate(1.03);
-  }
-  .card-photo.sm{ aspect-ratio: 16/9; }
-  .card-photo::after, .hero-figure::after, .mat-figure::after, .identity-card::after{
-    content:"";
-    position:absolute; inset:0;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-    opacity: .05;
-    mix-blend-mode: overlay;
-    pointer-events:none;
-  }
-
-  .photo-sovereign{ background-image: url('../assets/images/wallets_2.png'); }
-  .photo-horizon{ background-image: url('../assets/images/wallets_3.png'); }
-  .photo-voyager{ background-image: url('../assets/images/wallets_4.png'); }
-  .photo-exotic{ background-image: url('../assets/images/wallets_5.png'); }
-  .photo-dualist{ background-image: url('../assets/images/wallets_6.png'); }
-
-  .card-body{
-    padding: 22px 26px 26px;
-    flex:1;
-    display:flex;
-    align-items:flex-end;
-    justify-content:space-between;
-    gap: 16px;
-  }
-  .card-body > div:first-child{ flex:1; min-width:0; }
-  .card-body.stack{
-    flex-direction:column;
-    align-items:flex-start;
-    justify-content:flex-start;
-  }
-
-  .products > .card:nth-child(2) .photo-horizon{
-    flex: 1;
-    min-height: 0;
-    aspect-ratio: auto;
-  }
-
-  .products > .card:nth-child(2) .card-body.stack{
-    flex: 0 0 auto;
-    padding-top: 30px;
-  }
-  .card-body .eyebrow{
-    color: var(--gold);
-    margin-bottom: 10px;
-  }
-  .card-title{
-    font-family:'Playfair Display', serif;
-    font-weight:700;
-    font-size: 22px;
-    color: var(--cream);
-    margin-bottom: 6px;
-  }
-  .card-sub{
-    font-size: 13px;
-    color: var(--muted);
-    line-height:1.6;
-    max-width: 300px;
-  }
-  .card-sub.one-line{
-    max-width: none;
-    white-space: nowrap;
-  }
-  .card-price{
-    color: var(--gold);
-    font-size: 17px;
-    font-weight:600;
-    margin-top: 12px;
-  }
-  .card-cta{
-    text-align:right;
-    flex-shrink:0;
-  }
-  .view-details{
-    font-size: 11px;
-    letter-spacing:.12em;
-    text-transform:uppercase;
-    color: var(--gold);
-    border-bottom: 1px solid var(--gold-deep);
-    padding-bottom: 2px;
-  }
-
-  .card-small-body{
-    padding: 16px 18px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-  }
-  .card-small-title{
-    font-size: 14px;
-    font-weight:500;
-    color: var(--cream);
-    margin-bottom: 6px;
-  }
-  .card-small-price{
-    color: var(--gold);
-    font-size: 14px;
-    font-weight:600;
-  }
-  .cart-icon{
-    width:18px; height:18px;
-    color: var(--muted-2);
-  }
-
-  /* ---------------- MATERIALITY ---------------- */
-  .materiality{
-    padding: 90px 0 110px;
-  }
-  .mat-grid{
-    display:grid;
-    grid-template-columns: .95fr 1.05fr;
-    gap: 70px;
-    align-items:center;
-  }
-  .mat-text{
-    position:relative;
-    padding-left: 26px;
-    border-left: 1px solid var(--gold-deep);
-  }
-  .mat-text .eyebrow{
-    color: var(--gold);
-    letter-spacing:.22em;
-  }
-  .mat-text h2{
-    font-family:'Playfair Display', serif;
-    font-weight:700;
-    font-size: 30px;
-    line-height:1.35;
-    color: var(--cream);
-    margin: 16px 0 34px;
-    max-width: 360px;
-  }
-  .feature{
-    display:flex;
-    gap: 16px;
-    margin-bottom: 26px;
-  }
-  .feature-icon{
-    width:20px; height:20px;
-    color: var(--gold);
-    flex-shrink:0;
-    margin-top:2px;
-  }
-  .feature h4{
-    font-size: 12px;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    font-weight:700;
-    color: var(--cream);
-    margin-bottom: 8px;
-  }
-  .feature p{
-    font-size: 13.5px;
-    line-height:1.7;
-    color: var(--muted);
-    max-width: 300px;
-  }
-  .mat-figure-wrap{
-    position:relative;
-  }
-  .mat-figure-wrap::before{
-    content:"";
-    position:absolute;
-    top:-24px; left:40px;
-    right:-24px; bottom:40px;
-    border: 1px solid var(--gold-deep);
-    z-index:0;
-  }
-  .mat-figure{
-    position:relative;
-    z-index:1;
-    aspect-ratio: 4/3.3;
-    background-image: url('../assets/images/wallets_7.png');
-    background-size: cover;
-    background-position: center;
-    transition: filter .7s ease;
-  }
-
-  /* ---------------- IDENTITY ---------------- */
-  .identity{
-    padding: 20px 0 110px;
-    text-align:center;
-  }
-  .identity h2{
-    font-family:'Playfair Display', serif;
-    font-weight:700;
-    font-size: 26px;
-    color: var(--cream);
-    display:inline-block;
-    position:relative;
-    padding-bottom: 18px;
-  }
-  .identity h2::after{
-    content:"";
-    position:absolute;
-    left:50%; bottom:0;
-    width: 46px;
-    height: 1px;
-    background: var(--gold);
-    transform: translateX(-50%);
-  }
-  .identity-grid{
-    margin-top: 46px;
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-  }
-  .identity-card{
-    position:relative;
-    aspect-ratio: 16/11.5;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    overflow:hidden;
-    transition: filter .7s ease;
-  }
-  .identity-card::before{
-    content:"";
-    position:absolute; inset:0;
-    background: rgba(10,9,7,.28);
-    z-index:1;
-  }
-  .id-mens{
-    background-image: url('../assets/images/wallets_8.png');
-    background-size: cover;
-    background-position: center;
-  }
-  .id-unisex{
-    background-image: url('../assets/images/wallets_19.png');
-    background-size: cover;
-    background-position: center;
-  }
-
-  @media (prefers-reduced-motion: reduce){
-    .card-photo,
-    .hero-figure,
-    .mat-figure,
-    .identity-card{
-      transition: none;
-    }
-  }
-
-  .identity-content{
-    position:relative;
-    z-index:2;
-    text-align:center;
-  }
-  .identity-content h3{
-    font-family:'Playfair Display', serif;
-    font-weight:700;
-    font-size: 24px;
-    color: var(--cream);
-    margin-bottom: 16px;
-  }
-  .explore-btn{
-    display:inline-block;
-    padding: 10px 22px;
-    font-size: 11px;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    font-weight:600;
-    color: var(--gold);
-    border: 1px solid var(--gold);
-  }
-
-  /* ---------------- RESPONSIVE ---------------- */
-  @media (max-width: 980px){
-    .wrap{ padding: 0 28px; }
-    .hero-grid{ grid-template-columns: 1fr; gap: 40px; }
-    .hero h1{ font-size: 38px; }
-    .hero-figure{ order:-1; }
-    .products{ grid-template-columns: 1fr; }
-    .row-three{ grid-template-columns: 1fr 1fr; }
-    .mat-grid{ grid-template-columns: 1fr; }
-    .mat-figure-wrap{ order:-1; }
-    .mat-figure-wrap::before{ left:16px; top:-14px; right:-14px; bottom:16px; }
-    .identity-grid{ grid-template-columns: 1fr; }
-  }
-  @media (max-width: 560px){
-    .wrap{ padding: 0 18px; }
-    .subnav{ flex-wrap:wrap; gap:14px; }
-    .subnav-links{ gap:18px; flex-wrap:wrap; }
-    .row-three{ grid-template-columns: 1fr; }
-    .hero-actions{ flex-wrap:wrap; }
-    .card-body{ flex-direction:column; align-items:flex-start; }
-    .card-cta{ text-align:left; }
-  }
-
-  :focus-visible{ outline: 2px solid var(--gold); outline-offset: 2px; }
-</style>
+<link rel="stylesheet" href="../assets/css/wallets.css">
+<link rel="stylesheet" href="../assets/css/soft-hover.css">
 </head>
 <body>
 
   <div data-site-header></div>
 
-  <!-- ================= HERO ================= -->
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
@@ -523,13 +26,13 @@
         </div>
       </div>
       <div class="hero-figure" role="img" aria-label="Hand holding a black leather wallet">
+        <img class="soft-hover-image" src="../assets/images/wallets_1.png" alt="Black leather wallet">
         <div class="wallet"></div>
         <div class="hand"></div>
       </div>
     </div>
   </section>
 
-  <!-- ================= SUBNAV ================= -->
   <div class="wrap">
     <div class="subnav">
       <div class="subnav-links">
@@ -544,11 +47,10 @@
     </div>
   </div>
 
-  <!-- ================= PRODUCTS ================= -->
   <div class="wrap">
     <div class="products">
       <div class="card">
-        <div class="card-photo photo-sovereign"></div>
+        <div class="card-photo photo-sovereign"><img class="soft-hover-image" src="../assets/images/wallets_2.png" alt="The Sovereign Bi-Fold wallet"></div>
         <div class="card-body">
           <div>
             <div class="label eyebrow">New Arrival</div>
@@ -563,7 +65,7 @@
       </div>
 
       <div class="card">
-        <div class="card-photo sm photo-horizon"></div>
+        <div class="card-photo sm photo-horizon"><img class="soft-hover-image" src="../assets/images/wallets_3.png" alt="The Horizon Sleeve wallet"></div>
         <div class="card-body stack">
           <div class="label eyebrow">Unisex</div>
           <div class="card-title">The Horizon Sleeve</div>
@@ -574,32 +76,23 @@
 
       <div class="row-three">
         <div class="card">
-          <div class="card-photo sm photo-voyager"></div>
+          <div class="card-photo sm photo-voyager"><img class="soft-hover-image" src="../assets/images/wallets_4.png" alt="Voyager Passport Case"></div>
           <div class="card-small-body">
-            <div>
-              <div class="card-small-title">Voyager Passport Case</div>
-              <div class="card-small-price">$350</div>
-            </div>
+            <div><div class="card-small-title">Voyager Passport Case</div><div class="card-small-price">$350</div></div>
             <svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 4h2l2.4 12.2a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="10" cy="21" r="1"/><circle cx="17" cy="21" r="1"/></svg>
           </div>
         </div>
         <div class="card">
-          <div class="card-photo sm photo-exotic"></div>
+          <div class="card-photo sm photo-exotic"><img class="soft-hover-image" src="../assets/images/wallets_5.png" alt="Exotic Series Card Port"></div>
           <div class="card-small-body">
-            <div>
-              <div class="card-small-title">Exotic Series: Card Port</div>
-              <div class="card-small-price">$890</div>
-            </div>
+            <div><div class="card-small-title">Exotic Series: Card Port</div><div class="card-small-price">$890</div></div>
             <svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 4h2l2.4 12.2a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="10" cy="21" r="1"/><circle cx="17" cy="21" r="1"/></svg>
           </div>
         </div>
         <div class="card">
-          <div class="card-photo sm photo-dualist"></div>
+          <div class="card-photo sm photo-dualist"><img class="soft-hover-image" src="../assets/images/wallets_6.png" alt="The Dualist Set"></div>
           <div class="card-small-body">
-            <div>
-              <div class="card-small-title">The Dualist Set</div>
-              <div class="card-small-price">$680</div>
-            </div>
+            <div><div class="card-small-title">The Dualist Set</div><div class="card-small-price">$680</div></div>
             <svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 4h2l2.4 12.2a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="10" cy="21" r="1"/><circle cx="17" cy="21" r="1"/></svg>
           </div>
         </div>
@@ -607,60 +100,35 @@
     </div>
   </div>
 
-  <!-- ================= MATERIALITY ================= -->
   <section class="materiality">
     <div class="wrap mat-grid">
       <div class="mat-text">
         <div class="label eyebrow">The Materiality</div>
         <h2>Grains that tell a story. Stitches that never falter.</h2>
-
         <div class="feature">
           <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="5"/><path d="M8.5 13 7 21l5-2.5L17 21l-1.5-8"/></svg>
-          <div>
-            <h4>Full-Grain Vachetta</h4>
-            <p>The highest grade of leather, left untreated to preserve its natural strength and unique markings.</p>
-          </div>
+          <div><h4>Full-Grain Vachetta</h4><p>The highest grade of leather, left untreated to preserve its natural strength and unique markings.</p></div>
         </div>
-
         <div class="feature">
           <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12c2-4 4-4 6 0s4 4 6 0 4-4 4-4M4 12v6M20 8v6"/></svg>
-          <div>
-            <h4>Linen Thread Saddle Stitch</h4>
-            <p>An ancient technique that ensures even if a stitch breaks, the rest of the seam remains intact.</p>
-          </div>
+          <div><h4>Linen Thread Saddle Stitch</h4><p>An ancient technique that ensures even if a stitch breaks, the rest of the seam remains intact.</p></div>
         </div>
       </div>
-
-      <div class="mat-figure-wrap">
-        <div class="mat-figure" role="img" aria-label="Close up of stitched leather edge"></div>
-      </div>
+      <div class="mat-figure-wrap"><div class="mat-figure" role="img" aria-label="Close up of stitched leather edge"><img class="soft-hover-image" src="../assets/images/wallets_7.png" alt="Close up of stitched leather edge"></div></div>
     </div>
   </section>
 
-  <!-- ================= EXPLORE BY IDENTITY ================= -->
   <section class="identity">
     <div class="wrap">
       <h2>Explore by Identity</h2>
       <div class="identity-grid">
-        <a href="#" class="identity-card id-mens">
-          <div class="identity-content">
-            <h3>Men's Essentials</h3>
-            <span class="explore-btn">Explore Collection</span>
-          </div>
-        </a>
-        <a href="#" class="identity-card id-unisex">
-          <div class="identity-content">
-            <h3>Unisex Icons</h3>
-            <span class="explore-btn">Explore Collection</span>
-          </div>
-        </a>
+        <a href="#" class="identity-card id-mens"><img class="soft-hover-image" src="../assets/images/wallets_8.png" alt="Men's Essentials wallet collection"><div class="identity-content"><h3>Men's Essentials</h3><span class="explore-btn">Explore Collection</span></div></a>
+        <a href="#" class="identity-card id-unisex"><img class="soft-hover-image" src="../assets/images/wallets_19.png" alt="Unisex Icons wallet collection"><div class="identity-content"><h3>Unisex Icons</h3><span class="explore-btn">Explore Collection</span></div></a>
       </div>
     </div>
   </section>
 
   <div data-site-footer></div>
-
   <script src="../assets/js/header.js" defer></script>
-
 </body>
 </html>

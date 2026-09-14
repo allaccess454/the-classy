@@ -55,13 +55,13 @@
 }
 
 .collection-item img {
-  transition: transform 0.7s ease, filter 0.7s ease;
-  filter: grayscale(12%) contrast(1.04) brightness(0.84) saturate(0.88);
+  filter: brightness(0.88) saturate(0.92);
+  transition: transform 0.85s cubic-bezier(0.2, 0.7, 0.2, 1), filter 0.85s ease;
 }
 
 .collection-item:hover img {
-  transform: scale(1.06);
-  filter: grayscale(4%) contrast(1.04) brightness(0.94) saturate(1.04);
+  transform: scale(1.1);
+  filter: brightness(1) saturate(1);
 }
 
 .collection-item .item-label {
