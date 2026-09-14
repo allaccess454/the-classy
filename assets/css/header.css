@@ -2,7 +2,8 @@ header {
   --header-gold: #f4cb58;
   --header-gold-strong: #efbd35;
   --header-text-dim: #e2d9c9;
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 10;
   background: #101010;
   border-bottom: 1px solid rgba(201, 162, 74, 0.18);
@@ -98,17 +99,14 @@ header .search-button svg {
 }
 
 header .search-button {
-  min-width: 95px;
-  height: 34px;
-  padding: 0 10px 0 12px;
-  border: 1px solid rgba(201, 162, 74, 0.28);
-  background: rgba(255, 255, 255, 0.01);
-  gap: 8px;
-  font-size: 9px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-weight: 400;
-  color: var(--header-text-dim);
+  width: 16px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  gap: 0;
+  color: var(--header-gold);
   appearance: none;
   -webkit-appearance: none;
   cursor: pointer;

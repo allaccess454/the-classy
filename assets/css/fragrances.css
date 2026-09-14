@@ -59,6 +59,49 @@ img {
   margin-bottom: 14px;
 }
 
+.sort-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  padding-bottom: 7px;
+  color: var(--gold-soft);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.sort-control select {
+  min-width: 176px;
+  padding: 0 14px 7px 0;
+  border: 0;
+  border-bottom: 1px solid rgba(242, 237, 228, 0.22);
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 12px;
+  letter-spacing: 1.8px;
+  text-transform: none;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--text-dim) 50%), linear-gradient(135deg, var(--text-dim) 50%, transparent 50%);
+  background-position: calc(100% - 6px) 7px, calc(100% - 1px) 7px;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.sort-control select:focus {
+  outline: none;
+  border-bottom-color: var(--gold);
+}
+
+.sort-control option {
+  background: var(--panel);
+  color: var(--text);
+}
+
 .page-head h1 {
   font-size: 42px;
   font-weight: 600;
@@ -188,6 +231,22 @@ img {
   overflow: hidden;
 }
 
+.card figure img {
+  transition: transform 0.55s ease, filter 0.55s ease;
+  filter: brightness(0.88) saturate(0.92);
+}
+
+.card:hover figure img {
+  transform: scale(1.035);
+  filter: brightness(1) saturate(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card figure img {
+    transition: none;
+  }
+}
+
 .badge {
   position: absolute;
   top: 14px;
@@ -256,26 +315,52 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 26px;
-  margin-top: 64px;
-  font-size: 13px;
+  gap: 18px;
+  margin-top: -16px;
+  margin-bottom: 240px;
+  font-size: 16px;
   color: var(--text-faint);
+  font-weight: 300;
+  transform: translateX(135px);
+}
+
+.pagination > span:not(.arrow) {
+  font-size: 16px;
 }
 
 .pagination .active {
+  position: relative;
   color: var(--gold-soft);
-  border-bottom: 1px solid var(--gold);
-  padding-bottom: 4px;
+}
+
+.pagination .active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -7px;
+  height: 1px;
+  background: var(--gold);
 }
 
 .pagination .arrow {
-  color: var(--text-dim);
-  font-size: 14px;
+  color: var(--text-faint);
+  font-size: 23px;
+  font-weight: 200;
+  line-height: 0.7;
 }
 
 footer {
   border-top: 1px solid var(--line);
   padding: 44px 0;
+}
+
+footer .logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  color: var(--gold-soft);
 }
 
 footer .wrap {
@@ -286,8 +371,8 @@ footer .wrap {
 
 .foot-links {
   display: flex;
-  gap: 30px;
-  font-size: 13px;
+  gap: 34px;
+  font-size: 14px;
   color: var(--text-dim);
 }
 
@@ -311,8 +396,18 @@ footer .wrap {
     grid-template-columns: 1fr;
   }
 
+  .head-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 22px;
+  }
+
   .product-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .pagination {
+    transform: none;
   }
 
   footer .wrap {

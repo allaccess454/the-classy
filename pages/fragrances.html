@@ -7,8 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="header.css">
-<link rel="stylesheet" href="fragrances.css?v=2">
+<link rel="stylesheet" href="../assets/css/header.css">
+<link rel="stylesheet" href="../assets/css/fragrances.css">
 </head>
 <body>
 
@@ -17,6 +17,15 @@
 <div class="wrap page-head">
   <div class="head-row">
     <h1>The Olfactory <em>Heritage</em></h1>
+    <label class="sort-control">
+      <span>Sorted By:</span>
+      <select aria-label="Sort fragrances">
+        <option>Most Prestigious</option>
+        <option>Newest Arrivals</option>
+        <option>Price: Low to High</option>
+        <option>Price: High to Low</option>
+      </select>
+    </label>
   </div>
   <p>Explore our curated selection of artisanal fragrances. Each scent is a narrative of craftsmanship, blending rare botanicals with timeless elegance.</p>
 </div>
@@ -112,21 +121,10 @@
   </div>
 </div>
 
-<footer>
-  <div class="wrap">
-    <div class="logo">THE CLASSY</div>
-    <div class="foot-links">
-      <a href="wallets.html">Wallets</a>
-      <a href="gifts.html">Gifts</a>
-      <a href="antique.html">Antique</a>
-      <a href="index.html">Home</a>
-    </div>
-    <div class="foot-right">© 2024 THE CLASSY. ALL RIGHTS RESERVED.</div>
-  </div>
-</footer>
+<div data-site-footer></div>
 
-<script src="header.js" defer></script>
-<script src="fragrances.js" defer></script>
+<script src="../assets/js/header.js" defer></script>
+<script src="../assets/js/fragrances.js" defer></script>
 
 </body>
 </html>
