@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Classy — Payment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/header.css">
+<link rel="stylesheet" href="../assets/css/payment.css">
+</head>
+<body>
+
+<div data-site-header></div>
+
+<ol class="stepper" data-reveal>
+  <li class="step is-complete" data-step="1">
+    <span class="step-dot">01</span>
+    <span class="step-label">Shipping</span>
+    <span class="step-line"></span>
+  </li>
+  <li class="step is-active" data-step="2">
+    <span class="step-dot">02</span>
+    <span class="step-label">Payment</span>
+    <span class="step-line"></span>
+  </li>
+  <li class="step" data-step="3">
+    <span class="step-dot">03</span>
+    <span class="step-label">Place Order</span>
+    <span class="step-line"></span>
+  </li>
+</ol>
+
+<div class="wrap">
+  <div class="main-col" data-reveal>
+    <h1 class="page-title serif">Payment Method</h1>
+    <p class="page-sub">Select your preferred luxury transaction method &amp; verify billing specifications.</p>
+
+    <div class="ship-row" data-reveal>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+      <div class="txt">Delivering to: <b>Alexander Vance, 242 Mayfair Regency, London W1K 7AA</b></div>
+      <a class="edit-link" href="shipping.html">EDIT</a>
+    </div>
+
+    <button class="pay-option selected" type="button" data-reveal>
+      <div class="radio"><div class="dot-inner"></div></div>
+      <div class="pay-body">
+        <div class="pay-title">Credit / Debit Card</div>
+        <div class="pay-desc">Encrypted Instant Checkout with Vault Protection</div>
+      </div>
+      <div class="pay-right">
+        <div class="badge">VISA</div>
+        <div class="badge">MC</div>
+        <div class="badge">AMEX</div>
+      </div>
+    </button>
+
+    <button class="pay-option" type="button" data-reveal>
+      <div class="radio"><div class="dot-inner"></div></div>
+      <div class="pay-body">
+        <div class="pay-title">Vault Concierge / Private Bank Wire</div>
+        <div class="pay-desc">Automated invoice delivered to your family office or private banker</div>
+      </div>
+      <div class="pay-right"><div class="link-badge">CONCIERGE</div></div>
+    </button>
+
+    <button class="pay-option" type="button" data-reveal>
+      <div class="radio"><div class="dot-inner"></div></div>
+      <div class="pay-body">
+        <div class="pay-title">Crypto Luxury Escrow</div>
+        <div class="pay-desc">Instant settlement via BTC, ETH, or USDC</div>
+      </div>
+      <div class="pay-right"><div class="chip-row">BTC &nbsp;·&nbsp; ETH &nbsp;·&nbsp; USDC</div></div>
+    </button>
+
+    <div class="field-group" style="margin-top:34px;" data-reveal>
+      <label class="field-label">CARDHOLDER NAME</label>
+      <input class="field" type="text" value="ALEXANDER VANCE" style="text-transform:uppercase;">
+    </div>
+
+    <div class="field-group" data-reveal>
+      <label class="field-label">CARD NUMBER</label>
+      <div class="input-icon-wrap">
+        <input class="field" type="text" value="•••• •••• •••• 8842">
+        <div class="adorn"><div class="card-chip"></div></div>
+      </div>
+    </div>
+
+    <div class="field-row" data-reveal>
+      <div class="field-group">
+        <label class="field-label">EXPIRATION DATE</label>
+        <input class="field" type="text" value="11 / 28">
+      </div>
+      <div class="field-group">
+        <label class="field-label">SECURITY CODE <span class="hint">3 DIGITS</span></label>
+        <div class="input-icon-wrap">
+          <input class="field" type="text" placeholder="•••">
+          <div class="adorn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:8px;" data-reveal>
+      <div class="check-row">
+        <input type="checkbox" checked>
+        <div class="ctxt">Save this payment instrument in <b>The Classy Vault</b> for seamless future acquisitions.</div>
+      </div>
+      <div class="check-row">
+        <input type="checkbox" checked>
+        <div class="ctxt">Billing address matches verified shipping location.</div>
+      </div>
+    </div>
+
+    <button class="cta-btn" type="button" data-reveal>
+      CONTINUE TO REVIEW
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </button>
+
+    <a class="back-link" href="shipping.html" data-reveal>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+      Return to Shipping Details
+    </a>
+
+    <div class="trust-row" data-reveal>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+        SECURE SSL ENCRYPTION
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/></svg>
+        AUTHENTICITY GUARANTEED
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="8" width="16" height="12" rx="1"/><path d="M4 8l2-4h12l2 4"/><path d="M9 12h6"/></svg>
+        COMPLIMENTARY WORLDWIDE SHIPPING
+      </div>
+    </div>
+  </div>
+
+  <aside class="summary-panel" data-reveal>
+    <div class="summary-card">
+      <p class="summary-heading">Order Summary</p>
+
+      <div class="mini-item">
+        <div class="mini-media wallet-art"><div class="art-glow"></div>
+          <div class="wallet"><div class="wallet-stitch"></div><div class="wallet-emblem"></div><div class="wallet-fold"></div></div>
+        </div>
+        <div class="mini-info">
+          <p class="mini-name">Obsidian Bifold</p>
+          <p class="mini-sub">Limited Edition / Noir</p>
+          <p class="mini-price">£420.00</p>
+        </div>
+      </div>
+
+      <div class="mini-item">
+        <div class="mini-media bottle-art"><div class="art-glow"></div>
+          <div class="bottle"><div class="bottle-cap"></div><div class="bottle-neck"></div><div class="bottle-body"><span class="bottle-label">OUD<br>NOCTURNE</span></div><div class="bottle-shine"></div></div>
+        </div>
+        <div class="mini-info">
+          <p class="mini-name">Oud Nocturne</p>
+          <p class="mini-sub">100ml / Parfum</p>
+          <p class="mini-price">£1,420.00</p>
+        </div>
+      </div>
+
+      <div class="summary-row"><span>Subtotal</span><span>£1,840.00</span></div>
+      <div class="summary-row"><span>Shipping</span><span class="complimentary-tag">Complimentary</span></div>
+      <div class="summary-row no-border"><span>Tax</span><span class="tax-included">Included</span></div>
+
+      <div class="summary-total-row">
+        <span class="total-label">Total</span>
+        <span class="sum-total">£1,840.00</span>
+      </div>
+
+      <div class="promo-row">
+        <input type="text" class="promo-input" placeholder="Promo Code">
+        <button class="promo-apply" type="button">Apply</button>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<div data-site-footer></div>
+
+<script src="../assets/js/header.js?v=20260925-1" defer></script>
+<script src="../assets/js/payment.js" defer></script>
+</body>
+</html>

@@ -1,14 +1,17 @@
 const fallbackComponents = {
   header: `
-    <header>
+    <header class="site-header">
       <div class="header-inner">
         <div class="logo"><a href="../pages/home.html">THE CLASSY</a></div>
+
         <nav class="nav-links" aria-label="Main Navigation">
+          <a href="../pages/home.html" data-page="home">Home</a>
           <a href="../pages/fragrances.html" data-page="fragrances">Fragrances</a>
           <a href="../pages/wallets.html" data-page="wallets">Wallets</a>
           <a href="../pages/gifts.html" data-page="gifts">Gifts</a>
-          <a href="../pages/antique.html" data-page="antique">Collections</a>
+          <a href="../pages/antique.html" data-page="antique">Antique</a>
         </nav>
+
         <div class="nav-actions" aria-label="Account actions">
           <button class="search-button" type="button" aria-label="Search">
             <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="5.5"/><path d="M16 16l4.5 4.5"/></svg>
@@ -23,7 +26,7 @@ const fallbackComponents = {
       </div>
     </header>`,
   footer: `
-    <footer>
+    <footer class="site-footer">
       <div class="wrap">
         <div class="logo"><a href="../pages/home.html">THE CLASSY</a></div>
         <div class="foot-links">
@@ -65,9 +68,19 @@ async function loadSiteComponents() {
   ]);
 
   const currentPage = window.location.pathname.split('/').pop() || 'home.html';
+  const currentKey = currentPage.replace(/\.html$/, '');
+
   document.querySelectorAll('.nav-links [data-page]').forEach((link) => {
-    link.classList.toggle('active', `${link.dataset.page}.html` === currentPage);
+    const pageKey = link.dataset.page;
+    const isActive = pageKey === currentKey || (pageKey === 'fragrances' && currentKey === 'fragrances_details');
+    link.classList.toggle('active', isActive);
   });
 }
 
-loadSiteComponents();
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    loadSiteComponents();
+  });
+} else {
+  loadSiteComponents();
+}

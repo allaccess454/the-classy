@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Classy — Shipping</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/header.css">
+<link rel="stylesheet" href="../assets/css/shipping.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<div data-site-header></div>
+
+<main class="page">
+
+  <ol class="stepper" data-reveal>
+    <li class="step is-active" data-step="1">
+      <span class="step-dot">01</span>
+      <span class="step-label">Shipping</span>
+      <span class="step-line"></span>
+    </li>
+    <li class="step" data-step="2">
+      <span class="step-dot">02</span>
+      <span class="step-label">Payment</span>
+      <span class="step-line"></span>
+    </li>
+    <li class="step" data-step="3">
+      <span class="step-dot">03</span>
+      <span class="step-label">Place Order</span>
+      <span class="step-line"></span>
+    </li>
+  </ol>
+
+  <section class="shipping-grid">
+
+    <div class="form-column" data-reveal>
+      <h1 class="display-title form-title">Shipping Address</h1>
+
+      <form class="ship-form" novalidate>
+        <div class="field">
+          <label for="fullName">Full Name</label>
+          <input id="fullName" type="text" placeholder="Alexander Vance" autocomplete="name">
+        </div>
+
+        <div class="field">
+          <label for="street">Street Address</label>
+          <input id="street" type="text" placeholder="242 Mayfair Regency" autocomplete="street-address">
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="city">City</label>
+            <input id="city" type="text" placeholder="London" autocomplete="address-level2">
+          </div>
+          <div class="field">
+            <label for="postcode">Postal Code</label>
+            <input id="postcode" type="text" placeholder="W1K 7AA" autocomplete="postal-code">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone Number</label>
+          <input id="phone" type="tel" placeholder="+44 20 7946 0123" autocomplete="tel">
+        </div>
+
+        <button type="submit" class="checkout-btn ship-submit">
+          <span>Continue to Payment</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </form>
+
+      <div class="trust-list">
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="5.5" y="10.5" width="13" height="9.5" rx="1.4"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></svg>
+          <span>Secure SSL encryption</span>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 3l7 3v6c0 4.6-3 7.8-7 9-4-1.2-7-4.4-7-9V6l7-3Z"/></svg>
+          <span>Authenticity guaranteed</span>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="1.5" y="8" width="13" height="8.5" rx="1"/><path d="M14.5 11h3.7l3.3 3v2.5h-7z"/><circle cx="6" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg>
+          <span>Complimentary worldwide shipping</span>
+        </div>
+      </div>
+    </div>
+
+    <aside class="summary-column" data-reveal>
+      <div class="summary-card">
+        <p class="summary-heading">Order Summary</p>
+
+        <div class="mini-item">
+          <div class="mini-media wallet-art"><div class="art-glow"></div>
+            <div class="wallet"><div class="wallet-stitch"></div><div class="wallet-emblem"></div><div class="wallet-fold"></div></div>
+          </div>
+          <div class="mini-info">
+            <p class="mini-name">Obsidian Bifold</p>
+            <p class="mini-sub">Limited Edition / Noir</p>
+            <p class="mini-price">£420.00</p>
+          </div>
+        </div>
+
+        <div class="mini-item">
+          <div class="mini-media bottle-art"><div class="art-glow"></div>
+            <div class="bottle"><div class="bottle-cap"></div><div class="bottle-neck"></div><div class="bottle-body"><span class="bottle-label">OUD<br>NOCTURNE</span></div><div class="bottle-shine"></div></div>
+          </div>
+          <div class="mini-info">
+            <p class="mini-name">Oud Nocturne</p>
+            <p class="mini-sub">100ml / Parfum</p>
+            <p class="mini-price">£1,420.00</p>
+          </div>
+        </div>
+
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span>£1,840.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping</span>
+          <span class="complimentary-tag">Complimentary</span>
+        </div>
+        <div class="summary-row no-border">
+          <span>Tax</span>
+          <span class="tax-included">Included</span>
+        </div>
+
+        <div class="summary-total-row">
+          <span class="total-label">Total</span>
+          <span class="sum-total">£1,840.00</span>
+        </div>
+
+        <div class="promo-row">
+          <input type="text" class="promo-input" placeholder="Promo Code">
+          <button class="promo-apply" id="promoApply">Apply</button>
+        </div>
+      </div>
+    </aside>
+
+  </section>
+
+</main>
+
+<div data-site-footer></div>
+
+<script src="../assets/js/header.js?v=20260925-1" defer></script>
+<script src="../assets/js/shipping.js" defer></script>
+</body>
+</html>

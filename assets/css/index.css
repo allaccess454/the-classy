@@ -290,12 +290,6 @@ img {
   background: radial-gradient(circle at center, transparent 55%, rgba(0, 0, 0, 0.28) 100%);
 }
 
-.collection-card.female img {
-}
-
-  margin-bottom: 5px;
-}
-
 .collection-card p {
   font-size: 10px;
   color: var(--text-dim);
