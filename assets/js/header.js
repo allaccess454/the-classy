@@ -16,10 +16,10 @@ const fallbackComponents = {
           <button class="search-button" type="button" aria-label="Search">
             <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="5.5"/><path d="M16 16l4.5 4.5"/></svg>
           </button>
-          <a href="#" class="icon-button" aria-label="Bag">
+          <a href="../pages/cart.html" class="icon-button" aria-label="Bag">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9h12l-1 11H7L6 9Z"/><path d="M9 9V7a3 3 0 0 1 6 0v2"/></svg>
           </a>
-          <a href="#" class="icon-button" aria-label="Profile">
+          <a href="../pages/profile.html" class="icon-button" aria-label="Profile">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="8" r="4"/></svg>
           </a>
         </div>

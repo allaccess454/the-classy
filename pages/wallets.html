@@ -51,7 +51,7 @@
 
   <div class="wrap">
     <div class="products">
-      <div class="card">
+      <div class="card" data-link="product_details.html" tabindex="0" role="link" aria-label="View details for The Sovereign Bi-Fold">
         <div class="card-photo photo-sovereign"><img class="soft-hover-image" src="../assets/images/wallets_2.png" alt="The Sovereign Bi-Fold wallet"></div>
         <div class="card-body">
           <div>
@@ -61,12 +61,12 @@
           </div>
           <div class="card-cta">
             <div class="card-price">$495</div>
-            <a href="fragrances_details.html" class="view-details">View Details</a>
+            <a href="product_details.html" class="view-details">View Details</a>
           </div>
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" data-link="product_details.html" tabindex="0" role="link" aria-label="View details for The Horizon Sleeve">
         <div class="card-photo sm photo-horizon"><img class="soft-hover-image" src="../assets/images/wallets_3.png" alt="The Horizon Sleeve wallet"></div>
         <div class="card-body stack">
           <div class="label eyebrow">Unisex</div>
@@ -77,25 +77,34 @@
       </div>
 
       <div class="row-three">
-        <div class="card">
+        <div class="card" data-link="product_details.html" tabindex="0" role="link" aria-label="View details for Voyager Passport Case">
           <div class="card-photo sm photo-voyager"><img class="soft-hover-image" src="../assets/images/wallets_4.png" alt="Voyager Passport Case"></div>
           <div class="card-small-body">
-            <div><div class="card-small-title">Voyager Passport Case</div><div class="card-small-price">$350</div></div>
-            <svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 4h2l2.4 12.2a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="10" cy="21" r="1"/><circle cx="17" cy="21" r="1"/></svg>
+            <div class="card-small-copy">
+              <div class="card-small-title">Voyager Passport Case</div>
+              <div class="card-small-detail">A slim everyday case for passports, cards, and boarding essentials in premium calfskin.</div>
+              <div class="card-small-price">$350</div>
+            </div>
           </div>
         </div>
-        <div class="card">
+        <div class="card" data-link="product_details.html" tabindex="0" role="link" aria-label="View details for Exotic Series: Card Port">
           <div class="card-photo sm photo-exotic"><img class="soft-hover-image" src="../assets/images/wallets_5.png" alt="Exotic Series Card Port"></div>
           <div class="card-small-body">
-            <div><div class="card-small-title">Exotic Series: Card Port</div><div class="card-small-price">$890</div></div>
-            <svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 4h2l2.4 12.2a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="10" cy="21" r="1"/><circle cx="17" cy="21" r="1"/></svg>
+            <div class="card-small-copy">
+              <div class="card-small-title">Exotic Series: Card Port</div>
+              <div class="card-small-detail">Hand-finished statement leather for discreet carrying with room for essential cards and cash.</div>
+              <div class="card-small-price">$890</div>
+            </div>
           </div>
         </div>
-        <div class="card">
+        <div class="card" data-link="product_details.html" tabindex="0" role="link" aria-label="View details for The Dualist Set">
           <div class="card-photo sm photo-dualist"><img class="soft-hover-image" src="../assets/images/wallets_6.png" alt="The Dualist Set"></div>
           <div class="card-small-body">
-            <div><div class="card-small-title">The Dualist Set</div><div class="card-small-price">$680</div></div>
-            <svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 4h2l2.4 12.2a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="10" cy="21" r="1"/><circle cx="17" cy="21" r="1"/></svg>
+            <div class="card-small-copy">
+              <div class="card-small-title">The Dualist Set</div>
+              <div class="card-small-detail">A coordinated pairing of wallet and card case, crafted for modern rituals and long-term wear.</div>
+              <div class="card-small-price">$680</div>
+            </div>
           </div>
         </div>
       </div>
@@ -132,5 +141,24 @@
 
   <div data-site-footer></div>
   <script src="../assets/js/header.js?v=20260925-1"></script>
+  <script>
+    document.querySelectorAll('.card[data-link]').forEach((card) => {
+      const goToProduct = () => {
+        window.location.href = card.dataset.link;
+      };
+
+      card.addEventListener('click', (event) => {
+        if (event.target.closest('a')) return;
+        goToProduct();
+      });
+
+      card.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          goToProduct();
+        }
+      });
+    });
+  </script>
 </body>
 </html>
